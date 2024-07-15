@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottomBox"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/btn_back"
+                android:layout_width="@dimen/btn_back_size"
+                android:layout_height="25dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:elevation="2dp"
+                android:src="@drawable/back"
+                app:tint="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_productImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:elevation="1dp"
+                app:layout_constraintDimensionRatio="10:8"
+                app:layout_constraintHeight_max="350dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/sample1" />
+
+            <TextView
+                android:id="@+id/tv_profileBox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="10:2"
+                android:background="#FFFFFF"
+                android:elevation="2dp"
+                android:text=""
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_productImage" />
+
+            <ImageView
+                android:id="@+id/iv_profileIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHeight_max="40dp"
+                android:elevation="3dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_profileBox"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_profileBox"
+                app:srcCompat="@drawable/profile"
+                app:tint="#489746" />
+
+            <TextView
+                android:id="@+id/tv_productSeller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3dp"
+                android:fontFamily="@font/nanum_square_ac_extrabold"
+                android:text="seller"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@+id/iv_profileIcon"
+                app:layout_constraintTop_toTopOf="@+id/iv_profileIcon"
+                />
+
+            <TextView
+                android:id="@+id/tv_productAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="3dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/nanum_square_ac_extrabold"
+                android:text="address"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_productSeller"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profileIcon"
+                app:layout_constraintStart_toEndOf="@+id/iv_profileIcon" />
+
+            <ImageView
+                android:id="@+id/iv_thermometer"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:elevation="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_profileBox"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_profileBox"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/thermometer"
+                tools:layout_editor_absoluteX="311dp"
+                tools:layout_editor_absoluteY="405dp" />
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:elevation="3dp"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3dp"
+                android:fontFamily="@font/nanum_square_ac_extrabold"
+                android:text="40.0°C"
+                android:textColor="#E88D5B"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_thermometer"
+                app:layout_constraintEnd_toStartOf="@+id/iv_thermometer"
+                app:layout_constraintTop_toTopOf="@+id/iv_thermometer" />
+
+            <TextView
+                android:id="@+id/tv_productTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nanum_square_ac_extrabold"
+                android:maxLines="2"
+                android:elevation="1dp"
+                android:letterSpacing="0.03"
+                android:lineSpacingExtra="3dp"
+                android:paddingRight="40dp"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_profileBox" />
+
+
+            <TextView
+                android:id="@+id/tv_productIntroduction"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:letterSpacing="0.03"
+                android:elevation="1dp"
+                android:lineSpacingExtra="3dp"
+                android:paddingBottom="5dp"
+                android:text="Introduction\nintroduction"
+                android:fontFamily="@font/nanum_square_ac_bold"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_productTitle"
+                app:layout_constraintStart_toStartOf="@+id/tv_productTitle"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/view_bottomBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintDimensionRatio="5.5:1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_ProductPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price"
+        android:fontFamily="@font/nanum_square_ac_extrabold"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3dp"
+        android:layout_marginStart="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_favorite"
+        app:layout_constraintStart_toEndOf="@+id/iv_favorite"
+        app:layout_constraintTop_toTopOf="@+id/iv_favorite" />
+
+    <ImageView
+        android:id="@+id/iv_favorite"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/heart_empty" />
+
+    <ImageView
+        android:id="@+id/iv_favorite2"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="18dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/heart_filled" />
+
+    <Button
+        android:id="@+id/btn_chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="채팅하기"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/nanum_square_ac_bold"
+        android:textColor="@color/white"
+        android:letterSpacing="0.03"
+        android:lineSpacingExtra="3dp"
+        android:backgroundTint="#489746"
+        app:layout_constraintTop_toTopOf="@+id/tv_ProductPrice"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_ProductPrice"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

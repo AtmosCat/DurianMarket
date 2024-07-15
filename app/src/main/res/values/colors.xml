@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorButtonPressed">#489746</color> <!-- 버튼이 눌렸을 때의 색상 -->
+    <color name="colorButtonNormal">#FFFFFF</color> <!-- 버튼의 기본 색상 -->
+</resources>
+
+
