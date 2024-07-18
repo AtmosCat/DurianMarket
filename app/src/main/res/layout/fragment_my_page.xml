@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MyPageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:background="#DDDDDD">
+
+        <View
+            android:id="@+id/profileNameBox"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="#489746"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_profileDurianBackground"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            android:src="@android:drawable/presence_online"
+            app:layout_constraintStart_toStartOf="@+id/profileNameBox"
+            app:layout_constraintTop_toTopOf="@+id/profileNameBox"
+            tools:layout_editor_absoluteX="65dp"
+            tools:layout_editor_absoluteY="160dp" />
+
+        <ImageView
+            android:id="@+id/iv_profileDurian"
+            android:layout_width="31dp"
+            android:layout_height="35dp"
+            android:elevation="2dp"
+            android:src="@drawable/durian"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profileDurianBackground"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="@+id/iv_profileDurianBackground"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="@+id/iv_profileDurianBackground"
+            app:layout_constraintTop_toTopOf="@+id/iv_profileDurianBackground" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/nanum_square_ac_extrabold"
+            android:text="두리안러버"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_profileDurianBackground"
+            app:layout_constraintStart_toEndOf="@+id/iv_profileDurianBackground"
+            app:layout_constraintTop_toTopOf="@+id/iv_profileDurianBackground" />
+
+        <Button
+            android:id="@+id/btn_profileLikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum_square_ac_bold"
+            android:text="관심목록"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#489746"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileNameBox" />
+
+        <Button
+            android:id="@+id/btn_profileSellings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum_square_ac_bold"
+            android:text="판매상품"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#489746"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_profileLikes" />
+
+        <Button
+            android:id="@+id/btn_profileBuyings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum_square_ac_bold"
+            android:text="구매내역"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#489746"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_profileSellings" />
+
+        <Button
+            android:id="@+id/btn_profileNotice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum_square_ac_bold"
+            android:text="공지사항"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#489746"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_profileBuyings" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

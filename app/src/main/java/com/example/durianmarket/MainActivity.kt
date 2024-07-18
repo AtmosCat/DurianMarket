@@ -37,6 +37,7 @@ import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    // adapter를 by lazy로 나중에 onCreate() 안에서 사용
     private val adapter by lazy { MyAdapter(ProductManager.products) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,11 +73,14 @@ class MainActivity : AppCompatActivity() {
             "똑태현", 190000, "중구 동화동", 8, "28", false)
 
         // 데이터 통신을 위해 만들어놓은 어댑터의 itemClick 변수에 MyAdapter의 Itemclick 타입의 오브젝트를 만들어놓음
+        // MyAdapter에서 생성한 itemClick 인터페이스를 상속받아서 구체적인 onClick() 메서드를 구현
+        // 어댑터의 onBindViewHolder 안에서 itemView가 클릭되면 onClick() 메서드가 실행된다는 사실까지는 적어놨음
+        // 구체적으로 어떤 함수가 실행되는지 정의하는 것은 Activity의 몫이므로 여기에서 정의
         adapter.itemClick = object : MyAdapter.ItemClick {
             // MyAdapter 30번째 줄에서 호출한 itemClick이 여기로 콜백
             override fun onClick(view: View, position: Int) {
                 val intent = Intent(this@MainActivity, ProductActivity::class.java)
-                intent.putExtra ("position", position.toString())
+                intent.putExtra("position", position.toString())
                 startActivity(intent)
             }
         }
@@ -136,6 +140,7 @@ class MainActivity : AppCompatActivity() {
             val manager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             val builder : NotificationCompat.Builder
 
+            // Android8.0 이상부터는 채널 생성 필요함
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val channelID = "id"
                 val channelName = "default channel"
@@ -175,7 +180,6 @@ class MainActivity : AppCompatActivity() {
                 binding.ivUpscrollButton2.visibility = ImageView.GONE
             }, 50) // 100밀리초, 0.1초
         }
-
     }
 
     // 1번
@@ -183,11 +187,9 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         Log.d("MainActivity-lifecycle", "onResume")
         adapter.notifyDataSetChanged() // 전부 다 수정(대규모 데이터 처리 비추)
-
     }
 
     // 2번 - ResultCallback
-    // 3번 -
 
     override fun onStart() {
         super.onStart()

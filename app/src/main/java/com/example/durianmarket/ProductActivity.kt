@@ -43,7 +43,7 @@ class ProductActivity : AppCompatActivity() {
             edittedPrice = productPriceString + "원"
         }
 
-        //스코프함수로 간소화
+        // 스코프함수로 간소화
         with(product) {
             binding.ivProductImage.setImageResource(icon)
             binding.tvProductTitle.text = title
